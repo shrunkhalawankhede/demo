@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.buttons
+{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px
+}
+.btn
+{
+    
+    padding:20px;
+    font-size:2em;
+    border: 1px solid #d55;
+    background: #f1f1f1;
+    border-radius:10px;
+    cursor:pointer;
+}
+.btn:hover
+{
+    background-color:#f444f6;
+}
+</style>
+</head>
+<body>
+    <div class="calculator">
+        <h1> CALCULATOR </h1>
+        <input type="text" id="display" class="display" disabled>
+
+        <div class="buttons">
+            <button class="btn" onclick="Write(1)">1</button>
+            <button class="btn" onclick="Write(2)">2</button>
+            <button class="btn" onclick="Write(3)">3</button>
+            
+            <button class="btn" onclick="Write(4)">4</button>
+            <button class="btn" onclick="Write(5)">5</button>
+            <button class="btn" onclick="Write(6)">6</button>
+
+            <button class="btn" onclick="Write(7)">7</button>
+            <button class="btn" onclick="Write(8)">8</button>
+            <button class="btn" onclick="Write(9)">9</button>
+
+            <button class="btn" onclick="Write(0)">0</button>
+            <button class="btn" onclick="Write('+')">+</button>
+            <button class="btn" onclick="Write('-')">-</button>
+
+            <button class="btn" onclick="Write('*')">*</button>
+            <button class="btn" onclick="Write('/')">/</button>
+            <button class="btn" onClick="Result()">=</button>
+            <button class="btn" onClick="clearDisplay()">C</button>
+        </div>
+    </div>
+<script>
+let display = document.getElementById('display');
+
+function clearDisplay()
+{
+    display.value='';
+}
+
+function Write(value)
+{
+    display.value += value;
+    
+}
+
+function Result()
+{
+display.value=eval(display.value);
+}
+
+</script>
+</body>
+</html>
